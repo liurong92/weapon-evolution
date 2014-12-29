@@ -1,7 +1,10 @@
-function Player(name, hp, attack) {
+function Player(name, hp, attack, position, weapon, defense) {
   this.name = name;
   this.hp = hp;
   this.attack = attack;
+  this.position = position;
+  this.weapon = weapon;
+  this.defense = defense;
 }
 
 Player.prototype.getName = function() {

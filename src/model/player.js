@@ -6,4 +6,20 @@ function Player(name, hp, role, weapon, defense) {
   this.defense = defense;
 }
 
+Player.prototype.getRoleName = function () {
+  return this.role.roleName;
+};
+
+Player.prototype.getRoleAttack = function () {
+  return this.role.roleAttack;
+};
+
+Player.prototype.getWeaponName = function () {
+  return this.weapon.weaponName;
+};
+
+Player.prototype.getWeaponAttack = function () {
+  return this.weapon.weaponAttack;
+};
+
 module.exports = Player;

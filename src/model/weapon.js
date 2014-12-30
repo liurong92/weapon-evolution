@@ -4,6 +4,14 @@ function Weapon(weaponName, weaponAttack, effects) {
   this.effects = effects;
 }
 
+Weapon.prototype.getWeaponName = function () {
+  return this.weaponName;
+};
+
+Weapon.prototype.getWeaponAttack = function () {
+  return this.weaponAttack;
+};
+
 Weapon.prototype.getEffectsName = function () {
   return this.effects.effectName;
 };

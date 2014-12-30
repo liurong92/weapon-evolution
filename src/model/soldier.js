@@ -10,6 +10,7 @@ Soldier.prototype.getRoleName = function () {
   return this.role.roleName;
 };
 
+
 Soldier.prototype.getRoleAttack = function () {
   return this.role.roleAttack;
 };

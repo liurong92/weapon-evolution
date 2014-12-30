@@ -12,4 +12,8 @@ Player.prototype.getRoleAttack = function () {
   return this.role.roleAttack;
 };
 
+Player.getPlayerText = function () {
+  
+};
+
 module.exports = Player;

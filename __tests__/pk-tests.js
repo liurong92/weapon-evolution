@@ -40,36 +40,5 @@ describe('Pk', function() {
       expect(result).toEqual(texts);
     });
 
-
-    it('should return who dead and coup de grace',  function () {
-      var Role = require('../src/model/role');
-      var role1 = new Role('狂战士', 5);
-      var role2 = new Role('屌丝', 10);
-
-      var Effects = require('../src/model/effects');
-      var effects = new Effects('致命一击', 1);
-
-      var Weapon = require('../src/model/weapon');
-      var weapon1 = new Weapon('用砍刀', 5, '');
-      var weapon2 = new Weapon('', 0, effects);
-
-      var Defense = require('../src/model/defense');
-
-      var defense1 = new Defense('藤甲', 5);
-
-      var Player = require('../src/model/player');
-      var Soldier = require('../src/model/soldier');
-      
-      var player1 = new Soldier('李四', 50, role1, weapon1, defense1);
-      var player2 = new Player('王五', 50, role2);
-
-      var Pk = require('../src/model/pk');
-      var pk = new Pk(player1, player2);
-
-      var texts = '屌丝王五攻击了狂战士李四,王五发动了致命一击,李四受到10点攻击，剩40点血。\n';
-      var result = pk.getPlayerOneText();
-
-      expect(result).toEqual(texts);
-    });
   });
 });

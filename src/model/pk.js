@@ -26,18 +26,18 @@ Pk.prototype.pkResult = function () {
 };
 
 Pk.prototype.getPlayOneHp = function () {
-  return this.player2.getRoleAttack() + this.player2.getWeaponAttack();
+  return this.player2.getRoleAttack();
 };
 
 Pk.prototype.getPlayerOneText = function () {
   this.player1.hp -= this.getPlayOneHp();
 
-  var playerOneText1 = this.player2.getRoleName() + this.player2.name + this.player2.getWeaponName() +
+  var playerOneText1 = this.player2.getRoleName() + this.player2.name +
                       '攻击了' + this.player1.getRoleName() + this.player1.name + ',' ;
   var playerOneText2 = this.player1.name + '受到' + (this.player1.getRoleAttack() + this.player1.getWeaponAttack()) +
                       '点攻击，剩' + this.player1.hp + '点血。\n';
 
-  return playerOneText1 + this.getEffects() +playerOneText2;
+  return playerOneText1 + playerOneText2;
 };
 
 Pk.prototype.getPlayerTwoHp = function () {
@@ -53,17 +53,17 @@ Pk.prototype.getPlayerTwoText = function () {
   var playerTwoText2 = this.player2.name + '受到' + (this.player1.getRoleAttack() +this.player1.getWeaponAttack()) +
                       '点攻击，剩' + this.player2.hp + '点血。\n';
 
-  return playerTwoText1 + this.getEffects() + playerTwoText2;
+  return playerTwoText1 + playerTwoText2;
 };
 
-Pk.prototype.getEffects = function () {
-  var text = '';
-
-
-  if(this.player2.weapon.getEffectsTrigger() === 1) {
-    text = this.player2.name + '发动了' + this.player2.weapon.getEffectsName() + ',';
-  }
-  return text;
-};
+// Pk.prototype.getEffects = function () {
+//   var text = '';
+//
+//
+//   if(this.player1.weapon.getEffectsTrigger() === 1) {
+//     text = this.player2.name + '发动了' + this.player2.weapon.getEffectsName() + ',';
+//   }
+//   return text;
+// };
 
 module.exports = Pk;

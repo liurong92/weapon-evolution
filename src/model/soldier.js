@@ -6,26 +6,28 @@ function Soldier (name, hp, role, weapon, defense) {
   this.defense = defense;
 }
 
-Player.prototype.getRoleName = function () {
+Soldier.prototype.getRoleName = function () {
   return this.role.roleName;
 };
 
-Player.prototype.getRoleAttack = function () {
+Soldier.prototype.getRoleAttack = function () {
   return this.role.roleAttack;
 };
 
-Player.prototype.getWeaponName = function () {
+Soldier.prototype.getWeaponName = function () {
   return this.weapon.weaponName;
 };
 
-Player.prototype.getWeaponAttack = function () {
+Soldier.prototype.getWeaponAttack = function () {
   return this.weapon.weaponAttack;
 };
 
-Player.prototype.getdefenseName = function () {
+Soldier.prototype.getdefenseName = function () {
   return this.defense.defenseName;
 };
 
-Player.prototype.getDefenseAttack = function () {
+Soldier.prototype.getDefenseAttack = function () {
   return this.defense.defenseAttack;
 };
+
+module.exports = Soldier;

@@ -22,4 +22,12 @@ Player.prototype.getWeaponAttack = function () {
   return this.weapon.weaponAttack;
 };
 
+Player.prototype.getdefenseName = function () {
+  return this.defense.defenseName;
+};
+
+Player.prototype.getDefenseAttack = function () {
+  return this.defense.defenseAttack;
+};
+
 module.exports = Player;

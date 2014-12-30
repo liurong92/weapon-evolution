@@ -3,7 +3,6 @@ jest.dontMock('../src/model/role');
 jest.dontMock('../src/model/weapon');
 jest.dontMock('../src/model/defense');
 
-
 describe('Player', function() {
   var Role,role,Weapon,weapon,Defense,defense,Player,player;
   beforeEach(function () {
@@ -19,7 +18,7 @@ describe('Player', function() {
     Player = require('../src/model/player');
     player = new Player('李四', 50, role, weapon, defense);
   });
-  
+
   describe('#getRoleName', function() {
     it('should return roleName', function() {
       var result = player.getRoleName();

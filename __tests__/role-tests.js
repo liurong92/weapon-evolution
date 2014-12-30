@@ -8,6 +8,7 @@ describe('Role', function() {
 
       var resultName = role.roleName;
       var resultAttack = role.roleAttack;
+      
       expect(resultName).toEqual('狂战士');
       expect(resultAttack).toEqual(5);
     });

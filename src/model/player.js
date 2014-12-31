@@ -38,6 +38,10 @@ Player.prototype.getDefense = function () {
   return 0;
 };
 
+Player.prototype.getTrigger = function () {
+  return 0;
+};
+
 Player.prototype.getWeapon = function () {
   return '';
 };

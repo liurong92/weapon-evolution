@@ -38,18 +38,23 @@ Soldier.prototype.getDefense = function () {
   return this.defense.defenseAttack;
 };
 
+Soldier.prototype.getTrigger = function () {
+  return this.weapon.getEffectsTrigger();
+};
+
 Soldier.prototype.getWeapon = function () {
   return '用' + this.weapon.weaponName;
 };
 
 Soldier.prototype.getEffect = function () {
-  // var id = this.weapon.getEffectsTrigger();
-  if(this.weapon.getEffectsTrigger() === 1) {
-    return '李四发动了致命一击,';
-  }
-  // console.log(this.weapon.getEffectsTrigger());
-  return '';
+  // if(this.weapon.getEffectsTrigger() === 1) {
+  //   return this.name + '发动了' + this.weapon.getEffectsName() + ',';
+  // }
 
+  if(this.getTrigger() === 1) {
+    return this.name + '发动了' + this.weapon.getEffectsName() + ',';
+  }
+  return '';
 };
 
 module.exports = Soldier;

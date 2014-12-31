@@ -40,7 +40,7 @@ describe('Pk', function() {
       expect(result).toEqual(texts);
     });
 
-    it('should return 狂战士李四用砍刀攻击了屌丝王五,李四发动了致命一击,王五受到10点攻击，剩40点血。', function() {
+    it('should return 狂战士李四用砍刀攻击了屌丝王五,李四发动了致命一击,王五受到30点攻击，剩20点血。', function() {
       var Effects = require('../src/model/effects');
       var effects = new Effects('致命一击', 1);
 
@@ -55,7 +55,7 @@ describe('Pk', function() {
       var Pk = require('../src/model/pk');
       var pk = new Pk(soldier, player);
 
-      var texts = '狂战士李四用砍刀攻击了屌丝王五,李四发动了致命一击,王五受到10点攻击，剩40点血。\n';
+      var texts = '狂战士李四用砍刀攻击了屌丝王五,李四发动了致命一击,王五受到30点攻击，剩20点血。\n';
 
       var result = pk.getPlayerText(soldier, player);
 

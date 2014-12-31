@@ -26,10 +26,10 @@ Pk.prototype.pkResult = function () {
 };
 
 Pk.prototype.calculateDamage = function (attacker, defencer) {
-  return attacker.getAttcakPoint() - defencer.getDefPoint();
+  return attacker.getAttack() - defencer.getDefense();
 };
 
-Pk.prototype.getNewAttack = function (attacker, defencer) {
+Pk.prototype.getNewHp = function (attacker, defencer) {
    defencer.hp -= this.calculateDamage(attacker, defencer);
 };
 
@@ -37,7 +37,7 @@ Pk.prototype.getPlayerText = function (attacker, defencer) {
   this.getNewHp(attacker, defencer);
   return attacker.getRoleName() + attacker.name + '攻击了' +
          defencer.getRoleName() + defencer.name + ',' + defencer.name +
-         '受到' + (attacker.getRoleAttack() + attacker.getWeaponAttack()) +
+         '受到' + this.calculateDamage(attacker, defencer) +
          '点攻击，剩' + defencer.hp + '点血。\n';
 
 };

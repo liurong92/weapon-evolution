@@ -1,6 +1,6 @@
 function Role(roleName, roleAttack) {
-  this.roleName = roleName || '';
-  this.roleAttack = roleAttack || 0;
+  this.roleName = roleName;
+  this.roleAttack = roleAttack;
 }
 
 module.exports = Role;

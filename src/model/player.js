@@ -38,4 +38,8 @@ Player.prototype.getDefense = function () {
   return 0;
 };
 
+Player.prototype.getWeapon = function () {
+  return '';
+};
+
 module.exports = Player;

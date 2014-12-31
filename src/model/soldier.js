@@ -38,4 +38,8 @@ Soldier.prototype.getDefense = function () {
   return this.defense.defenseAttack;
 };
 
+Soldier.prototype.getWeapon = function () {
+  return '用' + this.weapon.weaponName;
+};
+
 module.exports = Soldier;

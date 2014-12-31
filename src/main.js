@@ -7,14 +7,14 @@ var Soldier = require('./model/soldier');
 
 
 function weaponEvolution() {
-  var weaponPlayer1 = new Weapon('用砍刀', 5, '');
+  var weaponPlayer = new Weapon('砍刀', 5);
 
-  var defensePlayer1 = new Defense('藤甲',5);
+  var defensePlayer = new Defense('藤甲',5);
 
   var role1 = new Role('狂战士',5);
   var role2 = new Role('屌丝',17);
 
-  var soldier = new Soldier('李四',50,role1,weaponPlayer1,defensePlayer1);
+  var soldier = new Soldier('李四',50,role1,weaponPlayer,defensePlayer);
   var player = new Player('王五',50,role2);
 
   var pk = new Pk(soldier, player);

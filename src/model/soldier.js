@@ -47,10 +47,6 @@ Soldier.prototype.getWeapon = function () {
 };
 
 Soldier.prototype.getEffect = function () {
-  // if(this.weapon.getEffectsTrigger() === 1) {
-  //   return this.name + '发动了' + this.weapon.getEffectsName() + ',';
-  // }
-
   if(this.getTrigger() === 1) {
     return this.name + '发动了' + this.weapon.getEffectsName() + ',';
   }

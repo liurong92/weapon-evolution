@@ -34,12 +34,13 @@ Pk.prototype.getNewHp = function (attacker, defencer) {
 };
 
 Pk.prototype.getPlayerText = function (attacker, defencer) {
+  var texts = attacker.getRoleName() + attacker.name + attacker.getWeapon() +
+              '攻击了' + defencer.getRoleName() + defencer.name + ',';
+  texts += attacker.getEffect();
   this.getNewHp(attacker, defencer);
-  return attacker.getRoleName() + attacker.name + attacker.getWeapon() + '攻击了' +
-         defencer.getRoleName() + defencer.name + ',' + defencer.name +
-         '受到' + this.calculateDamage(attacker, defencer) +
-         '点攻击，剩' + defencer.hp + '点血。\n';
-
+  texts += defencer.name + '受到' + this.calculateDamage(attacker, defencer) +
+          '点攻击，剩' + defencer.hp + '点血。\n';
+  return texts;
 };
 
 module.exports = Pk;

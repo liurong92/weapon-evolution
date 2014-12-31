@@ -42,4 +42,14 @@ Soldier.prototype.getWeapon = function () {
   return '用' + this.weapon.weaponName;
 };
 
+Soldier.prototype.getEffect = function () {
+  // var id = this.weapon.getEffectsTrigger();
+  // if(id === 1) {
+  //   return '李四发动了致命一击,';
+  // }
+  // console.log(this.weapon.effects.trigger);
+  return '';
+
+};
+
 module.exports = Soldier;

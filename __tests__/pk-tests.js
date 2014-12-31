@@ -12,8 +12,6 @@ describe('Pk', function() {
     });
 
     it('should return who dead',  function () {
-      // var Effects = require('../src/model/effects');
-      // var effects = new Effects('致命一击', 1);
 
       var Weapon = require('../src/model/weapon');
       var weapon = new Weapon('砍刀', 5);

@@ -3,10 +3,6 @@ function Effects(effectName, trigger) {
   this.trigger = trigger || 0;
 }
 
-// function effects() {
-//   return {effectName : 致命一击, trigger : 1};
-// }
-
 Effects.prototype.getEffectName = function () {
   return this.effectName;
 };

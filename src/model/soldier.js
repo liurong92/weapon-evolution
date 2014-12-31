@@ -44,10 +44,10 @@ Soldier.prototype.getWeapon = function () {
 
 Soldier.prototype.getEffect = function () {
   // var id = this.weapon.getEffectsTrigger();
-  // if(id === 1) {
-  //   return '李四发动了致命一击,';
-  // }
-  // console.log(this.weapon.effects.trigger);
+  if(this.weapon.getEffectsTrigger() === 1) {
+    return '李四发动了致命一击,';
+  }
+  // console.log(this.weapon.getEffectsTrigger());
   return '';
 
 };

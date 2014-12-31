@@ -46,11 +46,4 @@ Soldier.prototype.getWeapon = function () {
   return '用' + this.weapon.weaponName;
 };
 
-Soldier.prototype.getEffect = function () {
-  if(this.getTrigger() === 1) {
-    return this.name + '发动了' + this.weapon.getEffectsName() + ',';
-  }
-  return '';
-};
-
 module.exports = Soldier;

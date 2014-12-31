@@ -44,13 +44,22 @@ Pk.prototype.deadHp = function (attacker, defencer) {
 Pk.prototype.getPlayerText = function (attacker, defencer) {
   var texts = attacker.getRoleName() + attacker.name + attacker.getWeapon() +
               '攻击了' + defencer.getRoleName() + defencer.name + ',';
-  texts += attacker.getEffect();
 
-  if(attacker.getTrigger() === 1){
+  if(attacker.getTrigger() === Math.floor(Math.random() * 9) && attacker.weapon !== null) {
+    texts += attacker.name + '发动了' + attacker.weapon.getEffectsName() + ',';
     this.deadHp(attacker, defencer);
     texts += defencer.name + '受到' + this.deadDamage(attacker, defencer) +
              '点攻击，剩' + defencer.hp + '点血。\n';
+
+  } else if(attacker.getTrigger() === 2) {
+    texts += defencer.name + '中毒了,';
+
+    this.getNewHp(attacker, defencer);
+    texts += defencer.name + '受到' + this.calculateDamage(attacker, defencer) +
+             '点攻击，剩' + defencer.hp + '点血。\n';
+
   } else {
+    texts += '';
     this.getNewHp(attacker, defencer);
     texts += defencer.name + '受到' + this.calculateDamage(attacker, defencer) +
              '点攻击，剩' + defencer.hp + '点血。\n';

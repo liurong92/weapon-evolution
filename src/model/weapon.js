@@ -20,4 +20,8 @@ Weapon.prototype.getEffectsTrigger = function () {
   return this.effects.trigger;
 };
 
+Weapon.prototype.getEffectsTimes = function () {
+  return this.effects.times;
+};
+
 module.exports = Weapon;

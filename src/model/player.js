@@ -46,8 +46,4 @@ Player.prototype.getWeapon = function () {
   return '';
 };
 
-Player.prototype.getEffect = function () {
-  return '';
-};
-
 module.exports = Player;

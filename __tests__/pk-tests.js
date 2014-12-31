@@ -55,12 +55,37 @@ describe('Pk', function() {
       var Pk = require('../src/model/pk');
       var pk = new Pk(soldier, player);
 
-      var texts = '狂战士李四用砍刀攻击了屌丝王五,李四发动了致命一击,王五受到30点攻击，剩20点血。\n';
-
       var result = pk.getPlayerText(soldier, player);
 
-      expect(result).toEqual(texts);
+      expect(result).toEqual('狂战士李四用砍刀攻击了屌丝王五,李四发动了致命一击,王五受到30点攻击，剩20点血。\n');
     });
+
+    // it('should return poison', function() {
+    //   var Effects = require('../src/model/effects');
+    //   var effects = new Effects('中毒', 2, 3);
+    //
+    //   var Weapon = require('../src/model/weapon');
+    //   var weapon = new Weapon('毒剑', 5, effects);
+    //
+    //   var Player = require('../src/model/player');
+    //   var Soldier = require('../src/model/soldier');
+    //   var soldier = new Soldier('李四', 50, role1, weapon, defense);
+    //   var player = new Player('王五', 50, role2);
+    //
+    //   var Pk = require('../src/model/pk');
+    //   var pk = new Pk(soldier, player);
+    //
+    //   var texts = '狂战士李四用毒剑攻击了屌丝王五,王五中毒了,王五受到10点攻击，剩40点血。\n' +
+    //               '王五受到2点毒性伤害,剩38点血。\n' +
+    //               '屌丝王五攻击了狂战士李四,李四受到5点攻击，剩45点血。\n' +
+    //               '狂战士李四用毒剑攻击了屌丝王五,王五中毒了,王五受到10点攻击，剩28点血。\n' +
+    //               '王五受到2点毒性伤害,剩26点血。\n' +
+    //               '屌丝王五攻击了狂战士李四,李四受到5点攻击，剩40点血。\n';
+    //
+    //   var result = pk.getPlayerText(soldier, player);
+    //
+    //   expect(result).toEqual(texts);
+    // });
 
   });
 });

@@ -42,7 +42,7 @@ describe('Pk', function() {
 
     it('should return 狂战士李四用砍刀攻击了屌丝王五,李四发动了致命一击,王五受到30点攻击，剩20点血。', function() {
       var Effects = require('../src/model/effects');
-      var effects = new Effects('致命一击', 1);
+      var effects = new Effects('致命一击', 1, 1);
 
       var Weapon = require('../src/model/weapon');
       var weapon = new Weapon('砍刀', 5, effects);
@@ -55,9 +55,33 @@ describe('Pk', function() {
       var Pk = require('../src/model/pk');
       var pk = new Pk(soldier, player);
 
-      var result = pk.getPlayerText(soldier, player);
+      var resultOne = pk.getPlayerText(soldier, player);
+      var resultTwo = pk.getPlayerText(player, soldier);
 
-      expect(result).toEqual('狂战士李四用砍刀攻击了屌丝王五,李四发动了致命一击,王五受到30点攻击，剩20点血。\n');
+      expect(resultOne).toEqual('狂战士李四用砍刀攻击了屌丝王五,李四发动了致命一击,王五受到30点攻击，剩20点血。\n');
+      expect(resultTwo).toEqual('屌丝王五攻击了狂战士李四,李四受到5点攻击，剩45点血。\n');
+    });
+
+    it('should return Text', function() {
+      var Effects = require('../src/model/effects');
+      var effects = new Effects('致命一击', 0, 1);
+
+      var Weapon = require('../src/model/weapon');
+      var weapon = new Weapon('砍刀', 5, effects);
+
+      var Player = require('../src/model/player');
+      var Soldier = require('../src/model/soldier');
+      var soldier = new Soldier('李四', 50, role1, weapon, defense);
+      var player = new Player('王五', 50, role2);
+
+      var Pk = require('../src/model/pk');
+      var pk = new Pk(soldier, player);
+
+      var resultOne = pk.getPlayerText(soldier, player);
+      var resultTwo = pk.getPlayerText(player, soldier);
+
+      expect(resultOne).toEqual('狂战士李四用砍刀攻击了屌丝王五,王五受到10点攻击，剩40点血。\n');
+      expect(resultTwo).toEqual('屌丝王五攻击了狂战士李四,李四受到5点攻击，剩45点血。\n');
     });
 
     // it('should return poison', function() {

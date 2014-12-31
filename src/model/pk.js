@@ -41,11 +41,15 @@ Pk.prototype.deadHp = function (attacker, defencer) {
   defencer.hp -= this.deadDamage(attacker, defencer);
 };
 
+Pk.prototype.getRandom = function () {
+  return Math.random();
+};
+
 Pk.prototype.getPlayerText = function (attacker, defencer) {
   var texts = attacker.getRoleName() + attacker.name + attacker.getWeapon() +
               '攻击了' + defencer.getRoleName() + defencer.name + ',';
 
-  if(attacker.getTrigger() === Math.floor(Math.random() * 9) && attacker.weapon !== null) {
+  if(attacker.getTrigger() > this.getRandom() && attacker.weapon !== null) {
     texts += attacker.name + '发动了' + attacker.weapon.getEffectsName() + ',';
     this.deadHp(attacker, defencer);
     texts += defencer.name + '受到' + this.deadDamage(attacker, defencer) +

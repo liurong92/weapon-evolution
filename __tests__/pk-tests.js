@@ -18,22 +18,23 @@ describe('Pk', function() {
 
       var Player = require('../src/model/player');
       var Soldier = require('../src/model/soldier');
-      var player1 = new Soldier('李四', 50, role1, weapon, defense);
-      var player2 = new Player('王五', 50, role2);
+      var soldier = new Soldier('李四', 50, role1, weapon, defense);
+      var player = new Player('王五', 50, role2);
 
       var Pk = require('../src/model/pk');
-      var pk = new Pk(player1, player2);
+      var pk = new Pk(soldier, player);
 
-      var texts = '屌丝王五攻击了狂战士李四,李四受到10点攻击，剩40点血。\n' +
+      var texts = '屌丝王五攻击了狂战士李四,李四受到5点攻击，剩45点血。\n' +
                   '狂战士李四用砍刀攻击了屌丝王五,王五受到10点攻击，剩40点血。\n' +
-                  '屌丝王五攻击了狂战士李四,李四受到10点攻击，剩30点血。\n' +
+                  '屌丝王五攻击了狂战士李四,李四受到5点攻击，剩40点血。\n' +
                   '狂战士李四用砍刀攻击了屌丝王五,王五受到10点攻击，剩30点血。\n' +
-                  '屌丝王五攻击了狂战士李四,李四受到10点攻击，剩20点血。\n' +
+                  '屌丝王五攻击了狂战士李四,李四受到5点攻击，剩35点血。\n' +
                   '狂战士李四用砍刀攻击了屌丝王五,王五受到10点攻击，剩20点血。\n' +
-                  '屌丝王五攻击了狂战士李四,李四受到10点攻击，剩10点血。\n' +
+                  '屌丝王五攻击了狂战士李四,李四受到5点攻击，剩30点血。\n' +
                   '狂战士李四用砍刀攻击了屌丝王五,王五受到10点攻击，剩10点血。\n' +
-                  '屌丝王五攻击了狂战士李四,李四受到10点攻击，剩0点血。\n' +
-                  '\n李四输。';
+                  '屌丝王五攻击了狂战士李四,李四受到5点攻击，剩25点血。\n' +
+                  '狂战士李四用砍刀攻击了屌丝王五,王五受到10点攻击，剩0点血。\n' +
+                  '\n王五输。';
       var result = pk.pkResult();
 
       expect(result).toEqual(texts);
